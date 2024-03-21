@@ -5,6 +5,8 @@ import { buildConfig } from "payload/config";
 import path from "path";
 import { UsersCollection } from "./collections/Users";
 import dotenv from "dotenv";
+import { ProductsCollection } from "./collections/products/Products";
+import { MediaCollection } from "./collections/Media";
 
 dotenv.config({
   path: path.resolve(__dirname, "../.env"),
@@ -12,7 +14,7 @@ dotenv.config({
 
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
-  collections: [UsersCollection],
+  collections: [UsersCollection, ProductsCollection, MediaCollection],
   routes: {
     admin: "/sell",
   },
