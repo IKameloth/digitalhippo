@@ -131,7 +131,7 @@ const Page = async ({ params }: IPageProps) => {
           </div>
 
           {/* Add cart part */}
-          <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
+          <div className="mt-10 lg:col-start-1 lg:row-span-2 lg:max-w-lg lg:self-start">
             <div>
               <div className="mt-10">
                 <AddToCartButton product={product} />
