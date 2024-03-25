@@ -4,10 +4,9 @@ import { TQueryValidator } from "@/lib/validators/query-validator";
 import { Product } from "@/payload-types";
 import { trpc } from "@/trpc/client";
 import Link from "next/link";
-import React from "react";
 import ProductListing from "./ProductListing";
 
-interface IProductReelProps {
+interface ProductReelProps {
   title: string;
   subtitle?: string;
   href?: string;
@@ -16,10 +15,11 @@ interface IProductReelProps {
 
 const FALLBACK_LIMIT = 4;
 
-const ProductReel = (props: IProductReelProps) => {
+const ProductReel = (props: ProductReelProps) => {
   const { title, subtitle, href, query } = props;
+
   const { data: queryResults, isLoading } =
-    trpc.getInfinityProducts.useInfiniteQuery(
+    trpc.getInfiniteProducts.useInfiniteQuery(
       {
         limit: query.limit ?? FALLBACK_LIMIT,
         query,
@@ -30,6 +30,7 @@ const ProductReel = (props: IProductReelProps) => {
     );
 
   const products = queryResults?.pages.flatMap((page) => page.items);
+
   let map: (Product | null)[] = [];
   if (products && products.length) {
     map = products;
@@ -38,7 +39,7 @@ const ProductReel = (props: IProductReelProps) => {
   }
 
   return (
-    <div className="py-12">
+    <section className="py-12">
       <div className="md:flex md:items-center md:justify-between mb-4">
         <div className="max-w-2xl px-4 lg:max-w-4xl lg:px-0">
           {title ? (
@@ -50,28 +51,31 @@ const ProductReel = (props: IProductReelProps) => {
             <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
           ) : null}
         </div>
+
         {href ? (
           <Link
             href={href}
             className="hidden text-sm font-medium text-blue-600 hover:text-blue-500 md:block"
           >
-            Shop the collection {"  "}
-            <span aria-hidden="true" className="font-bold">
-              &rarr;
-            </span>
+            Shop the collection <span aria-hidden="true">&rarr;</span>
           </Link>
         ) : null}
       </div>
+
       <div className="relative">
         <div className="mt-6 flex items-center w-full">
-          <div className="w-full grid grid-col-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-10 lg:gap-x-8">
-            {map.map((product, idx) => (
-              <ProductListing key={idx} product={product} index={idx} />
+          <div className="w-full grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-10 lg:gap-x-8">
+            {map.map((product, i) => (
+              <ProductListing
+                key={`product-${i}`}
+                product={product}
+                index={i}
+              />
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

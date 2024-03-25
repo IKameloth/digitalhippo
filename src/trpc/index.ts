@@ -11,7 +11,7 @@ export const appRouter = router({
   // }),
   auth: authRouter,
   payment: paymentRouter,
-  getInfinityProducts: publicProcedure
+  getInfiniteProducts: publicProcedure
     .input(
       z.object({
         limit: z.number().min(1).max(100),

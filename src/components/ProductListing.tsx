@@ -1,20 +1,19 @@
 "use client";
 
 import { Product } from "@/payload-types";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { PRODUCT_CATEGORIES } from "@/config";
-import { formatPrice } from "../lib/utils";
 import ImageSlider from "./ImageSlider";
 
-interface IProductListingProps {
+interface ProductListingProps {
   product: Product | null;
   index: number;
 }
 
-const ProductListing = ({ product, index }: IProductListingProps) => {
+const ProductListing = ({ product, index }: ProductListingProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
@@ -45,6 +44,7 @@ const ProductListing = ({ product, index }: IProductListingProps) => {
       >
         <div className="flex flex-col w-full">
           <ImageSlider urls={validUrls} />
+
           <h3 className="mt-4 font-medium text-sm text-gray-700">
             {product.name}
           </h3>
