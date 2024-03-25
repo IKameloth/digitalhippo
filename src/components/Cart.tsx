@@ -32,6 +32,7 @@ const Cart = () => {
     (total, { product }) => total + product.price,
     0
   );
+
   const fee = 1;
 
   return (
