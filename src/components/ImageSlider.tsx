@@ -91,6 +91,7 @@ const ImageSlider = ({ urls }: IImageSliderProps) => {
               className="-z-10 h-full w-full object-cover object-center"
               src={url}
               alt="product image cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </SwiperSlide>
         ))}

@@ -74,7 +74,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="container relative flex flex-col pt-20 items-center justify-center lg:px-0">
+      <div className="container relative flex flex-col pt-20 pb-20 items-center justify-center lg:px-0">
         <div className="mx-auto flex flex-col w-full justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col items-center space-y-2 text-center">
             <Icons.logo className="h-20 w-20" />
@@ -103,6 +103,8 @@ const Page = () => {
                       "focus-visible:ring-red-500": errors.email,
                     })}
                     placeholder="your@email.com"
+                    name="email"
+                    autoComplete="email"
                   />
                   {errors?.email && (
                     <p className="text-sm text-red-500">
@@ -119,6 +121,8 @@ const Page = () => {
                     })}
                     placeholder="Password"
                     type="password"
+                    name="password"
+                    autoComplete="current-password"
                   />
                   {errors?.password && (
                     <p className="text-sm text-red-500">

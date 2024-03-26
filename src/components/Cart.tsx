@@ -98,6 +98,7 @@ const Cart = () => {
                 src="/hippo-empty-cart.png"
                 fill
                 alt="empty shopping cart"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
             <div className="text-xl font-semibold">Your cart is empty</div>

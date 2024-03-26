@@ -1,6 +1,7 @@
 import PaymentStatus from "@/components/PaymentStatus";
 import { PRODUCT_CATEGORIES } from "@/config";
 import { getPayloadClient } from "@/get-payload";
+import { useCart } from "@/hooks/useCart";
 import { getSeverSideUser } from "@/lib/payload-utils";
 import { formatPrice } from "@/lib/utils";
 import { Product, ProductFile, User } from "@/payload-types";
@@ -8,7 +9,6 @@ import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import React from "react";
 
 interface IThankYouPageProps {
   searchParams: {
@@ -19,7 +19,6 @@ interface IThankYouPageProps {
 const ThankYouPage = async ({ searchParams }: IThankYouPageProps) => {
   const nextCookies = cookies();
   const orderId = searchParams.orderId;
-
   const { user } = await getSeverSideUser(nextCookies);
   const payload = await getPayloadClient();
 
@@ -57,6 +56,8 @@ const ThankYouPage = async ({ searchParams }: IThankYouPageProps) => {
           src="/checkout-thank-you.jpg"
           className="h-full w-full object-cover object-center"
           alt="thank you for your order"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={true}
         />
       </div>
       <div>
@@ -108,6 +109,7 @@ const ThankYouPage = async ({ searchParams }: IThankYouPageProps) => {
                             alt={`${product.name} image`}
                             className="flex-none rounded-md bg-gray-100 object-cover object-center"
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           />
                         ) : null}
                       </div>

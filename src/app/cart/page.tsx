@@ -13,12 +13,13 @@ import React, { useEffect, useState } from "react";
 
 const Cart = () => {
   const router = useRouter();
-  const { items, removeItem } = useCart();
+  const { items, removeItem, clearCart } = useCart();
 
   const { mutate: createCheckoutSession, isLoading } =
     trpc.payment.createSession.useMutation({
       onSuccess: ({ url }) => {
         if (url) {
+          clearCart();
           router.push(url);
         }
       },
@@ -60,9 +61,10 @@ const Cart = () => {
                 >
                   <Image
                     src="/hippo-empty-cart.png"
-                    fill
                     loading="eager"
                     alt="empty shopping cart"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <h3 className="font-semibold text-2xl">Your cart is empty</h3>
@@ -94,6 +96,7 @@ const Cart = () => {
                               src={image.url}
                               alt="product image"
                               className="h-full w-full rounded-md object-cover object-center sm:h-48 sm:w-48"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                           ) : null}
                         </div>
