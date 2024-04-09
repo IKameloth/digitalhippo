@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { useCart } from "@/hooks/useCart";
 import { Product } from "@/payload-types";
+import { Sparkles } from "lucide-react";
 
 const AddToCartButton = ({ product }: { product: Product }) => {
   const { addItem } = useCart();
@@ -15,7 +16,7 @@ const AddToCartButton = ({ product }: { product: Product }) => {
     }, 2000);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [isSuccess]);
 
   return (
     <Button
@@ -26,7 +27,13 @@ const AddToCartButton = ({ product }: { product: Product }) => {
       size="lg"
       className="w-full"
     >
-      {isSuccess ? "Added!" : "Add to cart"}
+      {isSuccess ? (
+        <span className="font-semibold flex items-center justify-center">
+          Added! <Sparkles className="ml-2 size-5" />
+        </span>
+      ) : (
+        "Add to cart"
+      )}
     </Button>
   );
 };

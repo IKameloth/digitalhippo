@@ -10,7 +10,7 @@ const Footer = () => {
   const pathsToMinimize = ["/verify-email", "/sign-up", "/sign-in"];
 
   return (
-    <footer className="bg-white flex-grow-0">
+    <footer className="bg-white flex-grow-0 animate-fade-in-down">
       <MaxWidthWrapper>
         <div className="border-t border-gray-200">
           {pathsToMinimize.includes(pathname) ? null : (
@@ -54,7 +54,7 @@ const Footer = () => {
         <div className="py-10 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} All Rights Reserved
+              {new Date().getFullYear()} ~ Made with NextJS
             </p>
           </div>
 

@@ -53,12 +53,12 @@ const Cart = () => {
         {itemCount > 0 ? (
           <>
             <div className="flex w-full flex-col pr-6">
+              Cart items:
               <ScrollArea>
                 {items.map(({ product }) => (
                   <CartItem key={product.id} product={product} />
                 ))}
               </ScrollArea>
-              cart items
             </div>
             <div className="space-y-4 pr-6">
               <Separator />

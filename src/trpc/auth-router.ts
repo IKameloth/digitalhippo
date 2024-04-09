@@ -10,6 +10,7 @@ export const authRouter = router({
     .mutation(async ({ input }) => {
       const { email, password } = input;
       const payload = await getPayloadClient();
+
       const { docs: users } = await payload.find({
         collection: "users",
         where: {

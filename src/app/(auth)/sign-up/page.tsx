@@ -56,7 +56,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="container relative flex flex-col pt-20 pb-20 items-center justify-center lg:px-0">
+      <div className="container relative flex flex-col pt-20 pb-20 items-center justify-center lg:px-0 animate-fade-in-up">
         <div className="mx-auto flex flex-col w-full justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col items-center space-y-2 text-center">
             <Icons.logo className="h-20 w-20" />

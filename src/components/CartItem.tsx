@@ -1,12 +1,13 @@
+import React, { useState } from "react";
 import { PRODUCT_CATEGORIES } from "@/config";
 import { useCart } from "@/hooks/useCart";
-import { formatPrice } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { Product } from "@/payload-types";
 import { ImageIcon, X } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 
 const CartItem = ({ product }: { product: Product }) => {
+  const [animateOut, setAnimateOut] = useState<boolean>(false);
   const { image } = product.images[0];
   const { removeItem } = useCart();
 
@@ -15,7 +16,11 @@ const CartItem = ({ product }: { product: Product }) => {
   )?.label;
 
   return (
-    <div className="space-y-3 py-2">
+    <div
+      className={cn("space-y-3 py-2 animate-fade-in-down", {
+        "animate-out": animateOut,
+      })}
+    >
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center space-x-4">
           <div className="relative aspect-square h-16 min-w-fit overflow-hidden rounded">
@@ -45,7 +50,10 @@ const CartItem = ({ product }: { product: Product }) => {
             </span>
             <div className="mt-4 text-xs text-muted-foreground">
               <button
-                onClick={() => removeItem(product.id)}
+                onClick={() => {
+                  removeItem(product.id);
+                  setAnimateOut(true);
+                }}
                 className="flex items-center gap-0.5"
               >
                 <X className="w-3 h-3" />

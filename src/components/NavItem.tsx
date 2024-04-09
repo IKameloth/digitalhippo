@@ -18,7 +18,7 @@ interface NavItemProps {
 
 const NavItem = ({ isAnyOpen, category, handleOpen, isOpen }: NavItemProps) => {
   return (
-    <div className="flex">
+    <div className="flex animate">
       <div className="relative flex items-center">
         <Button
           className="gap-1.5"
@@ -38,7 +38,7 @@ const NavItem = ({ isAnyOpen, category, handleOpen, isOpen }: NavItemProps) => {
         <div
           onClick={() => close()}
           className={cn(
-            "absolute inset-x-0 top-full text-sm text-muted-foreground",
+            "absolute inset-x-0 top-full text-sm text-muted-foreground animate-slide-in-top",
             {
               "animate-in fade-in-10 slide-in-from-top-5": !isAnyOpen,
             }

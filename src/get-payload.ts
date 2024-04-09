@@ -43,10 +43,19 @@ export const getPayloadClient = async ({
   }
 
   if (!cached.promise) {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Server is ready to take our messages");
+      }
+    });
+
     cached.promise = payload.init({
       email: {
         transport: transporter,
-        fromAddress: "onboarding@cmatteo.dev",
+        fromAddress: "onboarding@resend.dev",
         fromName: "DigitalHippo",
       },
       secret: process.env.PAYLOAD_SECRET,

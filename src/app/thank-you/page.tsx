@@ -49,7 +49,7 @@ const ThankYouPage = async ({ searchParams }: IThankYouPageProps) => {
   }, 0);
 
   return (
-    <main className="relative lg:min-h-full">
+    <main className="relative lg:min-h-full animate-fade-in-up">
       <div className="hidden lg:block h-80 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12">
         <Image
           fill
@@ -67,7 +67,7 @@ const ThankYouPage = async ({ searchParams }: IThankYouPageProps) => {
               Order successfully
             </p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Thans for ordering
+              Thanks for ordering
             </h1>
             {order._isPaid ? (
               <p className="mt-2 text-base text-muted-foreground">
