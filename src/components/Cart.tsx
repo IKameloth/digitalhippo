@@ -13,11 +13,11 @@ import { Separator } from "@/components/ui/separator";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
-import Image from "next/image";
 import { useCart } from "@/hooks/useCart";
 import { ScrollArea } from "./ui/scroll-area";
 import CartItem from "./CartItem";
 import { useEffect, useState } from "react";
+import { Icons } from "./Icons";
 
 const Cart = () => {
   const { items } = useCart();
@@ -90,17 +90,7 @@ const Cart = () => {
           </>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-1">
-            <div
-              aria-hidden="true"
-              className="relative mb-4 h-60 w-60 text-muted-foreground"
-            >
-              <Image
-                src="/hippo-empty-cart.png"
-                fill
-                alt="empty shopping cart"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
+            <Icons.emptyCartLogo className="h-auto w-[20vw]" />
             <div className="text-xl font-semibold">Your cart is empty</div>
             <SheetTrigger asChild>
               <Link

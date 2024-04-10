@@ -37,12 +37,7 @@ const NavItem = ({ isAnyOpen, category, handleOpen, isOpen }: NavItemProps) => {
       {isOpen ? (
         <div
           onClick={() => close()}
-          className={cn(
-            "absolute inset-x-0 top-full text-sm text-muted-foreground animate-slide-in-top",
-            {
-              "animate-in fade-in-10 slide-in-from-top-5": !isAnyOpen,
-            }
-          )}
+          className="absolute inset-x-0 top-full text-sm text-muted-foreground animate-fade-in-down transition duration-300 ease-in-out drop-shadow-md"
         >
           <div
             className="absolute inset-0 top-1/2 bg-white shadow"

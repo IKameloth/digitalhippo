@@ -8,7 +8,6 @@ import { cookies } from "next/headers";
 import UserAccountNav from "./UserAccountNav";
 import MobileNav from "./MobileNav";
 import { getSeverSideUser } from "@/lib/payload-utils";
-import { Sidebar } from "lucide-react";
 
 const Navbar = async () => {
   const nextCookies = cookies();
@@ -23,7 +22,7 @@ const Navbar = async () => {
               <MobileNav user={user} />
               <div className="ml-4 flex lg:ml-0 animate-fade-in-down">
                 <Link href="/">
-                  <Icons.logo className="h-10 w-10" />
+                  <Icons.rocketLogoNav className="h-8 w-auto" />
                 </Link>
               </div>
 

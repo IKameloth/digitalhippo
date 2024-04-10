@@ -1,5 +1,6 @@
 "use client";
 
+import { Icons } from "@/components/Icons";
 import { Button } from "@/components/ui/button";
 import { PRODUCT_CATEGORIES } from "@/config";
 import { useCart } from "@/hooks/useCart";
@@ -55,18 +56,7 @@ const Cart = () => {
             <h2 className="sr-only">Items in your shopping cart</h2>
             {isMounted && items.length === 0 ? (
               <div className="flex flex-col h-full items-center justify-center space-y-1">
-                <div
-                  aria-hidden="true"
-                  className="relative mb-4 h-40 w-40 text-muted-foreground"
-                >
-                  <Image
-                    src="/hippo-empty-cart.png"
-                    loading="eager"
-                    alt="empty shopping cart"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
+                <Icons.emptyCartLogo className="h-auto w-[20rem]" />
                 <h3 className="font-semibold text-2xl">Your cart is empty</h3>
                 <p className="text-muted-foreground text-center">
                   Whoops! Nothing to show here yet.
