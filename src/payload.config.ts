@@ -30,7 +30,7 @@ export default buildConfig({
     user: "users",
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: "- DigitalHippo",
+      titleSuffix: "- DigitalRocket",
       favicon: "/favicon.ico",
       ogImage: "/thumbnail.jpg",
     },

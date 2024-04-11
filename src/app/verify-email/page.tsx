@@ -1,6 +1,6 @@
-import VerifyEmail from "@/components/VerifyEmail";
-import Image from "next/image";
 import React from "react";
+import VerifyEmail from "@/components/VerifyEmail";
+import { Icons } from "@/components/Icons";
 
 interface IPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -19,14 +19,7 @@ const VerifyEmailPage = ({ searchParams }: IPageProps) => {
           </div>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-1">
-            <div className="relative mb-4 h-60 w-60 text-muted-foreground">
-              <Image
-                src="/hippo-email-sent.png"
-                fill
-                alt="hippo email sent image"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
+            <Icons.mailBoxLogo className="h-auto w-[15rem] mb-5" />
             <h3 className="font-semibold text-2xl">Check your email</h3>
             {toEmail ? (
               <p className="text-muted-foreground text-center">

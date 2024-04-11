@@ -32,8 +32,7 @@ export const ReceiptEmail = (props: ReceiptEmailProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Your DigitalHippo Receipt</Preview>
-
+      <Preview>Your DigitalRocket Receipt</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section>
@@ -42,7 +41,7 @@ export const ReceiptEmail = (props: ReceiptEmailProps) => {
                 src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-email-sent.png`}
                 width="100"
                 height="100"
-                alt="DigitalHippo"
+                alt="DigitalRocket"
               />
             </Column>
 
@@ -159,8 +158,7 @@ export const ReceiptEmail = (props: ReceiptEmailProps) => {
             <Link href="#">Privacy Policy </Link>
           </Text>
           <Text style={footerCopyright}>
-            Copyright © 2023 DigitalHippo Inc. <br />{" "}
-            <Link href="#">All rights reserved</Link>
+            DigitalRocket Inc. <br />{" "}
           </Text>
         </Container>
       </Body>

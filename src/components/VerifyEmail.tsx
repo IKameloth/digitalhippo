@@ -1,10 +1,11 @@
 "use client";
 
 import { trpc } from "@/trpc/client";
-import { Loader2, XCircle } from "lucide-react";
-import Image from "next/image";
+import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
+import { Icons } from "./Icons";
+import Image from "next/image";
 
 interface IVerifyEmailProps {
   token: string;
@@ -18,7 +19,7 @@ const VerifyEmail = ({ token }: IVerifyEmailProps) => {
   if (isError) {
     return (
       <div className="flex flex-col items-center gap-2">
-        <XCircle className="h-8 w-8 text-red-600" />
+        <Icons.notFoundLogo className="h-auto w-[15rem] mb-2" />
         <h3 className="font-semibold text-xl">There was a problem</h3>
         <p className="text-muted-foreground text-sm">
           This token is not valid or might be expired. Please try again.
@@ -32,7 +33,7 @@ const VerifyEmail = ({ token }: IVerifyEmailProps) => {
       <div className="flex flex-col h-full items-center justify-center">
         <div className="relative mb-4 h-60 w-60 text-muted-foreground">
           <Image
-            src="/hippo-email-sent.png"
+            src="/email-send.png"
             alt="the email was sent"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
