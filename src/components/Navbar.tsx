@@ -14,7 +14,7 @@ const Navbar = async () => {
   const { user } = await getSeverSideUser(nextCookies);
 
   return (
-    <div className="bg-white sticky z-50 top-0 inset-x-0 h-16 animate-fade-in-down">
+    <div className="bg-white sticky z-50 top-0 inset-x-0 h-16 animate-fade-in-up">
       <header className="relative bg-white">
         <MaxWidthWrapper>
           <div className="border-b border-gray-200">
@@ -59,11 +59,9 @@ const Navbar = async () => {
                       Create account
                     </Link>
                   )}
-
                   {user ? (
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   ) : null}
-
                   {user ? null : (
                     <div className="flex lg:ml-6">
                       <span
@@ -72,10 +70,9 @@ const Navbar = async () => {
                       />
                     </div>
                   )}
-
-                  <div className="ml-4 flow-root lg:ml-6">
-                    <Cart />
-                  </div>
+                </div>
+                <div className="ml-4 mr-2 flow-root lg:ml-6 lg:mr-0">
+                  <Cart />
                 </div>
               </div>
             </div>

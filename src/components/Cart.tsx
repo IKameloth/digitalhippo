@@ -90,7 +90,7 @@ const Cart = () => {
           </>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-1">
-            <Icons.emptyCartLogo className="h-auto w-[20vw]" />
+            <Icons.emptyCartLogo className="h-auto w-[20rem]" />
             <div className="text-xl font-semibold">Your cart is empty</div>
             <SheetTrigger asChild>
               <Link
