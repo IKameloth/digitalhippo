@@ -4,11 +4,12 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 export type CartItem = {
   product: Product;
+  slug: string;
 };
 
 type CartState = {
   items: CartItem[];
-  addItem: (product: Product) => void;
+  addItem: (product: Product, slug: string) => void;
   removeItem: (productId: string) => void;
   clearCart: () => void;
 };
@@ -17,13 +18,13 @@ export const useCart = create<CartState>()(
   persist(
     (set) => ({
       items: [],
-      addItem: (product) =>
+      addItem: (product, slug) =>
         set((state) => {
-          return { items: [...state.items, { product }] };
+          return { items: [...state.items, { product, slug }] };
         }),
-      removeItem: (productId) =>
+      removeItem: (slug) =>
         set((state) => ({
-          items: state.items.filter((item) => item.product.id !== productId),
+          items: state.items.filter((item) => item.slug !== slug),
         })),
       clearCart: () => set({ items: [] }),
     }),

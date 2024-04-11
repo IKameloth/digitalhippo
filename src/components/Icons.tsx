@@ -744,29 +744,29 @@ export const Icons = {
       <path
         d="M10.5537 24.0315L26.5603 22.5734C28.5563 22.3852 30.5518 22.941 32.2127 24.1475C33.8736 25.3539 35.0991 27.1379 35.6841 29.201L51.0258 84.4747L48.0215 90.2671C47.2498 91.7596 46.8689 93.4495 46.9194 95.1568C46.9697 96.864 47.4495 98.5245 48.3076 99.9612C49.1658 101.398 50.37 102.557 51.792 103.315C53.2139 104.073 54.8003 104.401 56.3819 104.264L117.823 98.6443"
         stroke="#075985"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M37.9742 37.5914L109.388 31.0699C110.091 31.005 110.799 31.1114 111.461 31.3814C112.121 31.6513 112.715 32.0777 113.202 32.629C113.688 33.1803 114.052 33.8424 114.268 34.5659C114.483 35.2897 114.546 36.0565 114.449 36.8094L109.61 74.414C109.464 75.5423 108.969 76.5846 108.204 77.3731C107.441 78.1616 106.452 78.6508 105.399 78.7617L51.0259 84.4747L37.9742 37.5914Z"
         fill="white"
         stroke="#075985"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M63.2156 116.936C66.4185 116.936 69.0149 114.141 69.0149 110.693C69.0149 107.246 66.4185 104.45 63.2156 104.45C60.0127 104.45 57.4163 107.246 57.4163 110.693C57.4163 114.141 60.0127 116.936 63.2156 116.936Z"
         fill="white"
         stroke="#075985"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M103.601 113.251C106.804 113.251 109.401 110.456 109.401 107.008C109.401 103.56 106.804 100.765 103.601 100.765C100.399 100.765 97.8021 103.56 97.8021 107.008C97.8021 110.456 100.399 113.251 103.601 113.251Z"
         fill="white"
         stroke="#075985"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M23.2292 21.0809L8.13863 22.4593C6.83089 22.5788 5.86077 23.8169 5.97171 25.2247C6.08265 26.6325 7.23278 27.6769 8.5404 27.5574L23.631 26.1791C24.9387 26.0596 25.9088 24.8215 25.7979 23.4136C25.6869 22.0058 24.5368 20.9615 23.2292 21.0809Z"
@@ -775,8 +775,8 @@ export const Icons = {
       <path
         d="M68.0421 66.6333C68.3365 64.2141 69.3903 61.9761 71.0288 60.2904C72.6671 58.6046 74.7916 57.5724 77.0497 57.3651C79.3079 57.1576 81.5641 57.7877 83.444 59.1503C85.3239 60.513 86.7147 62.5266 87.3855 64.8571"
         stroke="#075985"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M87.5454 52.3311C88.3071 52.3311 88.9244 51.6665 88.9244 50.8465C88.9244 50.0267 88.3071 49.3619 87.5454 49.3619C86.7839 49.3619 86.1664 50.0267 86.1664 50.8465C86.1664 51.6665 86.7839 52.3311 87.5454 52.3311Z"
@@ -789,45 +789,45 @@ export const Icons = {
       <path
         d="M26.8435 108.851V114.564"
         stroke="#FFC700"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M24.1964 111.701H29.4909"
         stroke="#FFC700"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M111.445 2.65101V8.3507"
         stroke="#FFC700"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M108.797 5.50086H114.092"
         stroke="#FFC700"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M48.7604 19.6838V25.3835"
         stroke="#FFC700"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M46.1006 22.5337H51.4074"
         stroke="#FFC700"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M124.656 40.6401C125.349 40.6401 125.912 40.0347 125.912 39.2881C125.912 38.5414 125.349 37.9361 124.656 37.9361C123.963 37.9361 123.4 38.5414 123.4 39.2881C123.4 40.0347 123.963 40.6401 124.656 40.6401Z"
         fill="white"
         stroke="#FFC700"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M77.72 28.4852C78.3864 28.4852 78.9267 27.9035 78.9267 27.1862C78.9267 26.4687 78.3864 25.8872 77.72 25.8872C77.0537 25.8872 76.5134 26.4687 76.5134 27.1862C76.5134 27.9035 77.0537 28.4852 77.72 28.4852Z"

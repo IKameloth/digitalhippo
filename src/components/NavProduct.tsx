@@ -40,26 +40,26 @@ const NavProduct = ({ product, index, onClose }: NavProductProps) => {
     return (
       <div className="group relative text-base sm:text-sm">
         <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-          <Image
-            src={validUrls[0]}
-            alt="product category image"
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <a href={`/product/${product.id}`}>
+            <Image
+              src={validUrls[0]}
+              alt="product category image"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </a>
         </div>
         <p className="mt-1" aria-hidden="true">
           {label}
         </p>
+        <p className="mt-6 font-bold text-gray-900">{product.name}</p>
         <Link
           href={`/product/${product.id}`}
-          className="mt-6 block font-medium text-gray-900"
+          className="mt-2 block font-medium text-gray-900"
         >
-          {product.name}
-        </Link>
-        <p className="mt-1" aria-hidden="true">
           Shop now
-        </p>
+        </Link>
       </div>
     );
   }

@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { useCart } from "@/hooks/useCart";
 import { Product } from "@/payload-types";
 import { Sparkles } from "lucide-react";
+import { randomUUID } from "crypto";
 
 const AddToCartButton = ({ product }: { product: Product }) => {
   const { addItem } = useCart();
@@ -21,7 +22,7 @@ const AddToCartButton = ({ product }: { product: Product }) => {
   return (
     <Button
       onClick={() => {
-        addItem(product);
+        addItem(product, self.crypto.randomUUID());
         setIsSuccess(true);
       }}
       size="lg"

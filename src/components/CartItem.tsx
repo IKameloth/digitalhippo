@@ -6,7 +6,7 @@ import { Product } from "@/payload-types";
 import { ImageIcon, X } from "lucide-react";
 import Image from "next/image";
 
-const CartItem = ({ product }: { product: Product }) => {
+const CartItem = ({ product, slug }: { product: Product; slug: string }) => {
   const [animateOut, setAnimateOut] = useState<boolean>(false);
   const { image } = product.images[0];
   const { removeItem } = useCart();
@@ -51,7 +51,7 @@ const CartItem = ({ product }: { product: Product }) => {
             <div className="mt-4 text-xs text-muted-foreground">
               <button
                 onClick={() => {
-                  removeItem(product.id);
+                  removeItem(slug);
                   setAnimateOut(true);
                 }}
                 className="flex items-center gap-0.5"

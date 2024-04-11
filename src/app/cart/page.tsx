@@ -70,14 +70,14 @@ const Cart = () => {
               })}
             >
               {isMounted &&
-                items.map(({ product }) => {
+                items.map(({ product, slug }) => {
                   const label = PRODUCT_CATEGORIES.find(
                     (category) => category.value === product.category
                   )?.label;
                   const { image } = product.images[0];
 
                   return (
-                    <li key={product.id} className="flex py-6 sm:py-10">
+                    <li key={slug} className="flex py-6 sm:py-10">
                       <div className="flex-shrink-0">
                         <div className="relative h-24 w-24">
                           {typeof image !== "string" && image.url ? (
@@ -117,7 +117,7 @@ const Cart = () => {
                             <div className="absolute right-0 top-0">
                               <Button
                                 aria-label="remove product"
-                                onClick={() => removeItem(product.id)}
+                                onClick={() => removeItem(slug)}
                                 variant="ghost"
                               >
                                 <X className="h5 w-5" aria-hidden="true" />
