@@ -1,6 +1,0 @@
-[build]
-  command = "yarn build"
-  publish = "out"
-
-[dev]
-  command = "yarn start"
